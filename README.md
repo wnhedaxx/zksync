@@ -9,55 +9,22 @@
 zkSync is a scaling and privacy engine for Ethereum. Its current functionality scope includes low gas transfers of ETH
 and ERC20 tokens in the Ethereum network.
 
-## Description
 
-zkSync is built on ZK Rollup architecture. ZK Rollup is an L2 scaling solution in which all funds are held by a smart
-contract on the mainchain, while computation and storage are performed off-chain. For every Rollup block, a state
-transition zero-knowledge proof (SNARK) is generated and verified by the mainchain contract. This SNARK includes the
-proof of the validity of every single transaction in the Rollup block. Additionally, the public data update for every
-block is published over the mainchain network in the cheap calldata.
+# degods.zksync
 
-This architecture provides the following guarantees:
+Hello everyone, twitter id oxdoxo
+![image](https://avatars.githubusercontent.com/u/70830772?s=400&u=2ed023fa0865132977919170696b9503aa8a2107&v=100)
 
-- The Rollup validator(s) can never corrupt the state or steal funds (unlike Sidechains).
-- Users can always retrieve the funds from the Rollup even if validator(s) stop cooperating because the data is
-  available (unlike Plasma).
-- Thanks to validity proofs, neither users nor a single other trusted party needs to be online to monitor Rollup blocks
-  in order to prevent fraud.
 
-In other words, ZK Rollup strictly inherits the security guarantees of the underlying L1.
+```
 
-To learn how to use zkSync, please refer to the [zkSync SDK documentation](https://zksync.io/api/sdk/).
+## 程序说明【我用的开发链，以下命令针对开发链】
+### 1.部署程序
+ developer deploy degods.aleo --private-key xxxx --query "http://localhost:3030" --path "build/" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" --fee 91169000 --record  xxxxx
+### 2.开启一期双色球
 
-## Development Documentation
+### 3.投注
+developer execute double_color_ball.aleo ticket_purchase "{user:wnhedaxx,round_number:2u32,count:1u32,gates:100000000u64,red_ball_1:1u32,red_ball_2:2u32,red_ball_3:15u32,red_ball_4:16u32,red_ball_5:13u32,red_ball_6:30u32,blue_ball_1:8u32}" --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" --private-key xxxxxx --fee 91169000 --record  xxxx
+### 4.停止投注
 
-The following guides for developers are available:
-
-- Installing development dependencies: [docs/setup-dev.md](docs/setup-dev.md).
-- Launching zkSync locally: [docs/launch.md](docs/launch.md).
-- Development guide: [docs/development.md](docs/development.md).
-- Repository architecture overview: [docs/architecture.md](docs/architecture.md).
-
-## Projects
-
-- [zkSync server](core/bin/server)
-- [zkSync prover](core/bin/prover)
-- [JavaScript SDK](sdk/zksync.js)
-- [Rust SDK](sdk/zksync-rs)
-
-## Changelog
-
-Since the repository is big and is split into independent components, there is a different changelog for each of its
-major parts:
-
-- [Smart contracts](changelog/contracts.md)
-- [Core](changelog/core.md)
-- [Infrastructure](changelog/infrastructure.md)
-- [JavaScript SDK](changelog/js-sdk.md)
-- [Rust SDK](changelog/rust-sdk.md)
-
-## License
-
-zkSync is distributed under the terms of both the MIT license and the Apache License (Version 2.0).
-
-See [LICENSE-APACHE](LICENSE-APACHE), [LICENSE-MIT](LICENSE-MIT) for details.
+. developer execute degods.aleo draw_price 2u32 --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" --private-key xxxxxx --fee 1091169000 --record xxxx
